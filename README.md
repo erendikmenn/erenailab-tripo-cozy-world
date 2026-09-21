@@ -58,7 +58,7 @@ A Three.js + TypeScript third-person curved-world exploration demo. No quests, c
 Controls: WASD/arrows camera-relative movement; Shift runs; Space jumps; drag mouse/touch to orbit. Touch directional buttons and jump button are shown on coarse-pointer devices. Low disables bloom and shadows; Medium/High cap DPR and vary shadow resolution.
 
 ## Asset mapping
-All source files remain in Downloads; copies live in public/assets.
+The generated models included in this repository live in public/assets.
 - stylized+girl+character+3d+model-2.glb → character.glb, 1.65m tall, own walk.001 animation, 65 Mixamo joints.
 - low-poly+tree+3d+model.glb → tree.glb, 5.5m nominal height, reused with deterministic scale variations.
 - flower+garden+island+3d+model.glb → flowers.glb, .65m nominal height, sunk .12m to hide the generated island base.
@@ -67,7 +67,7 @@ All source files remain in Downloads; copies live in public/assets.
 
 No fence asset. A tree ring, an instanced low shrub belt, outward-motion slowdown and a 27m circular boundary define the explorable patch. The playable surface is a 72m-radius spherical cap. Avatar aligns to its normal. Simple circle colliders protect landmarks and tree trunks; camera raycasts against actual model geometry and terrain.
 
-The girl's own walk clip is used directly. Only hips/root XZ translation is frozen; vertical bob and child-bone translations remain intact. Run is the same clip at 1.55x speed, not a separately generated run clip. Idle uses the rig rest pose plus subtle breathing. A donor motion source is retained solely as fallback for future animation-free character swaps; its rotation deltas are retargeted to target rest transforms. It is not loaded for the current character.
+The girl's own walk clip is used directly. Only hips/root XZ translation is frozen; vertical bob and child-bone translations remain intact. Run is the same clip at 1.55x speed, not a separately generated run clip. Idle uses the rig rest pose plus subtle breathing. The code contains an optional donor-animation fallback for future character swaps. A donor file is not distributed; the included character uses its own walk clip.
 
 ## Validation
 Unit tests: camera-relative movement, grounded jump/no double jump/landing, spherical normal, source-immutable root-motion cleanup including preserved child translations. Browser smoke: actual walking, running, jumping, orbit, full-body camera distance, all five real assets, zero page errors/fallback warnings. Screenshots in tests/ready.png, tests/running.png and tests/orbit.png.
