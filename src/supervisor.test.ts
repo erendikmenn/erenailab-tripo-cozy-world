@@ -1,0 +1,3 @@
+import{test}from'node:test';import assert from'node:assert/strict';import{boundaryStep,BOUNDARY,cameraClearance}from'./physics.ts';
+test('camera retracts in front of obstruction closer than former 2.2m floor',()=>{assert.equal(cameraClearance(6.7),6.7);assert.equal(cameraClearance(6.7,1.2),.95);assert.ok(cameraClearance(6.7,.1)<.1)});
+test('natural boundary slows outward travel but preserves inward and tangent travel',()=>{const a=boundaryStep(26,0,.1,0);assert.ok(a.x>26&&a.x<26.1);assert.equal(boundaryStep(26,0,-.1,0).x,25.9);assert.equal(boundaryStep(26,0,0,.1).z,.1);let p={x:26,z:0};for(let i=0;i<1000;i++)p=boundaryStep(p.x,p.z,.1,0);assert.ok(Math.hypot(p.x,p.z)<=BOUNDARY)});
