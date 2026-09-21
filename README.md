@@ -41,6 +41,8 @@ npm run test:browser
 
 ## Kaynak ve kullanım notları
 
+Proje kodu [MIT lisansı](LICENSE) ile açık kaynak olarak paylaşılmıştır. Üretilmiş model ve görseller, videodaki örneği çalıştırıp geliştirebilmeniz için sağlanır.
+
 Kod ve bu video için oluşturduğumuz referans görselleri/modelleri birlikte inceleyip kendi denemelerinize başlangıç olarak kullanabilirsiniz. Model üretimini tekrarlamak Tripo hesabı/kredisi gerektirebilir. Tripo servis koşulları ve üçüncü taraf bağımlılıkların kendi lisansları geçerlidir. Bu repo herhangi bir üçüncü taraf oyunun kodunu veya modelini içermez.
 
 Video Tripo ile ücretli iş birliği kapsamında hazırlanmıştır.
